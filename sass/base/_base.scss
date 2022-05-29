@@ -1,0 +1,58 @@
+@use "./abstract" as *;
+
+:root {
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Dark_Gray: hsl(0, 0%, 63%);
+  --Very_Dark_Gray: hsl(0, 0%, 27%);
+
+  --bla: 1px solid black;
+  --sal: 1px solid salmon;
+  --aqu: 1px solid aqua;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  position: relative;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "League Spartan", sans-serif;
+}
+body {
+  background-color: var(--White);
+  color: var(--Black);
+  font-size: 1.6rem;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+a,
+button {
+  display: inline-block;
+  color: var(--Very_Dark_Gray);
+}
+h1 {
+  @include font-sizing(700, 4.8, -0.02);
+  @media screen and (max-width: 450px) {
+    @include font-sizing(700, 4, -0.02);
+  }
+}
+h2 {
+  @include font-sizing(600, 1.6, 0.3);
+}
+p {
+  color: var(--Dark_Gray);
+  @include font-sizing(500, 1.6, 0);
+}

@@ -1,0 +1,68 @@
+@use "../base/abstract" as *;
+
+%svg {
+  height: 2.4rem;
+  width: 2.4rem;
+  cursor: pointer;
+  display: none;
+}
+
+header {
+  z-index: 1069;
+  @extend %flex;
+  position: absolute;
+  // margin: 5vh 0 0 5vw;
+  margin: 6rem 0 0 6rem;
+
+  .left {
+    @extend %flexsb;
+    margin-right: 5rem;
+
+    svg {
+      @extend %svg;
+      stroke: var(--White);
+    }
+
+    .img-wrp {
+      @extend %flex;
+      width: 6.6rem;
+    }
+  }
+
+  .nav-con {
+    transition: all 0.3s ease-out;
+    .close {
+      @extend %svg;
+      stroke: var(--Dark_Gray);
+    }
+
+    nav {
+      @extend %flex;
+      gap: 3rem;
+      font-weight: 700;
+
+      a {
+        color: var(--White);
+        &::after {
+          transition: transform .3s ease-out;
+          content: "";
+          display: inline-block;
+          position: relative;
+          height: 2px;
+          width: 50%;
+          background-color: var(--White);
+          position: absolute;
+          top: calc(100% + 1rem);
+          left: 50%;
+          transform: translateX(-50%) scaleX(0);
+          transform-origin: left;
+        }
+        &:hover {
+          &::after {
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}

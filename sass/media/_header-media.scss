@@ -1,0 +1,73 @@
+@mixin flexsb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 950px) {
+  header {
+    margin: 4rem 0 0 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    svg {
+      display: inline-block !important;
+    }
+    margin: 0;
+    .left {
+      width: 45vw;
+      padding: 3rem 0 0 2rem;
+
+      .img-wrp {
+        transform: translateX(50%);
+      }
+    }
+
+    .nav-con-dark-bg {
+      transition: clip-path 0.3s linear;
+      position: fixed;
+      inset: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: var(--Black);
+        opacity: 0.6;
+      }
+    }
+
+    .nav-con {
+      @include flexsb;
+      background-color: white;
+      padding: 0 2.2rem;
+      height: 11rem;
+      width: 100vw;
+
+      nav {
+        a {
+          color: var(--Black);
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    .left {
+      width: 50vw;
+    }
+  }
+}

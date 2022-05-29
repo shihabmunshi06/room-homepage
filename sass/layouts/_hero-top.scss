@@ -1,0 +1,88 @@
+@use "../base/abstract";
+
+.hero__top {
+  width: 100%;
+  > * {
+    height: 53rem;
+    user-select: none;
+  }
+
+  &__left {
+    width: 58%;
+
+    * {
+      height: inherit;
+    }
+
+    &__img-container {
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 42%;
+
+    &__text-container {
+      overflow: hidden;
+    }
+
+    .sliding-div {
+      padding: 10rem 8rem 0;
+      > p {
+        margin-top: 2rem;
+      }
+      a {
+        @extend %flexst;
+        gap: 2rem;
+        margin-top: 3rem;
+        p {
+          @extend %flex;
+          gap: 2rem;
+          span {
+            color: var(--Very_Dark_Gray);
+            font-weight: 600;
+            letter-spacing: 0.73em;
+          }
+        }
+        img {
+          width: 4.4rem;
+        }
+        &:hover {
+          span {
+            color: var(--Dark_Gray);
+          }
+          img {
+            filter: invert(75%) sepia(0%) saturate(3157%) hue-rotate(158deg)
+              brightness(85%) contrast(94%);
+          }
+        }
+      }
+    }
+
+    &__btn-wrapper {
+      @extend %flex;
+      background-color: var(--Black);
+      width: 16rem;
+      height: 8rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      cursor: pointer;
+      > * {
+        width: 50%;
+        height: 100%;
+        @extend %flex;
+        &:hover {
+          background-color: var(--Dark_Gray);
+        }
+      }
+
+      svg {
+        stroke: var(--White);
+        width: 66%;
+        aspect-ratio: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%flexst {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+%flexsb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin font-sizing($w, $s, $ls) {
+  font-weight: $w;
+  font-size: $s * 1rem;
+  letter-spacing: $ls * 1em;
+}

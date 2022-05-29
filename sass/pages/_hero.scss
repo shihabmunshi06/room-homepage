@@ -1,0 +1,11 @@
+@use "../base/abstract";
+main {
+  .hero {
+    > * {
+      @extend %flex;
+      @media screen and (max-width: 1130px){
+        flex-direction: column;
+      }
+    }
+  }
+}

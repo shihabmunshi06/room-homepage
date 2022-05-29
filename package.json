@@ -1,0 +1,16 @@
+{
+  "name": "built",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass/style.scss dist/css/style.css",
+    "prefix": "npx postcss dist/css/style.css --use autoprefixer -d dist/css/postcss/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}
